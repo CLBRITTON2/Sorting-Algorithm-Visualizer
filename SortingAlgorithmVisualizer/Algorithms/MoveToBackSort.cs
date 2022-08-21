@@ -61,19 +61,15 @@ namespace SortingAlgorithmVisualizer
         }
         public void DrawSortedNumbers()
         {
-
+            for (int i = 0; i < (_arrayToBeSorted.Count() - 1); i++)
+            {
+                _sortingGraphics.FillRectangle(new SolidBrush(Color.Green), i, _maxNumberValue - _arrayToBeSorted[i], 1, _maxNumberValue);
+            }
         }
         private void DrawNumberRepresentations(int position, int height)
         {
             _sortingGraphics.FillRectangle(whiteBrush, position, 0, 1, _maxNumberValue);
             _sortingGraphics.FillRectangle(redBrush, position, _maxNumberValue - _arrayToBeSorted[position], 1, _maxNumberValue);
-        }
-        public void RedrawGUI()
-        {
-            for (int i = 0; i < (_arrayToBeSorted.Count() - 1); i++)
-            {
-                _sortingGraphics.FillRectangle(new SolidBrush(Color.White), i, _maxNumberValue - _arrayToBeSorted[i], 1, _maxNumberValue);
-            }
         }
     }
 }
