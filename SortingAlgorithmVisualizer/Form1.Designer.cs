@@ -34,9 +34,10 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.AlgorithmComboBox = new System.Windows.Forms.ComboBox();
-            this.TheResetButton = new System.Windows.Forms.Button();
+            this.PopulateNumbersButton = new System.Windows.Forms.Button();
             this.MainSortingPanel = new System.Windows.Forms.Panel();
-            this.StartButton = new System.Windows.Forms.Button();
+            this.SortButton = new System.Windows.Forms.Button();
+            this.PauseResumeButton = new System.Windows.Forms.Button();
             this.menuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,15 +91,15 @@
             this.AlgorithmComboBox.Size = new System.Drawing.Size(191, 21);
             this.AlgorithmComboBox.TabIndex = 2;
             // 
-            // TheResetButton
+            // PopulateNumbersButton
             // 
-            this.TheResetButton.Location = new System.Drawing.Point(297, 30);
-            this.TheResetButton.Name = "TheResetButton";
-            this.TheResetButton.Size = new System.Drawing.Size(138, 22);
-            this.TheResetButton.TabIndex = 3;
-            this.TheResetButton.Text = "Reset";
-            this.TheResetButton.UseVisualStyleBackColor = true;
-            this.TheResetButton.Click += new System.EventHandler(this.TheResetButton_Click);
+            this.PopulateNumbersButton.Location = new System.Drawing.Point(297, 30);
+            this.PopulateNumbersButton.Name = "PopulateNumbersButton";
+            this.PopulateNumbersButton.Size = new System.Drawing.Size(138, 22);
+            this.PopulateNumbersButton.TabIndex = 3;
+            this.PopulateNumbersButton.Text = "Populate Numbers";
+            this.PopulateNumbersButton.UseVisualStyleBackColor = true;
+            this.PopulateNumbersButton.Click += new System.EventHandler(this.PopulateNumbersButton_Click);
             // 
             // MainSortingPanel
             // 
@@ -111,22 +112,33 @@
             this.MainSortingPanel.Size = new System.Drawing.Size(1524, 613);
             this.MainSortingPanel.TabIndex = 4;
             // 
-            // StartButton
+            // SortButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(441, 31);
-            this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(138, 20);
-            this.StartButton.TabIndex = 5;
-            this.StartButton.Text = "Start";
-            this.StartButton.UseVisualStyleBackColor = true;
-            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
+            this.SortButton.Location = new System.Drawing.Point(441, 31);
+            this.SortButton.Name = "SortButton";
+            this.SortButton.Size = new System.Drawing.Size(138, 20);
+            this.SortButton.TabIndex = 5;
+            this.SortButton.Text = "Sort";
+            this.SortButton.UseVisualStyleBackColor = true;
+            this.SortButton.Click += new System.EventHandler(this.SortButton_Click);
+            // 
+            // PauseResumeButton
+            // 
+            this.PauseResumeButton.Location = new System.Drawing.Point(585, 31);
+            this.PauseResumeButton.Name = "PauseResumeButton";
+            this.PauseResumeButton.Size = new System.Drawing.Size(138, 20);
+            this.PauseResumeButton.TabIndex = 6;
+            this.PauseResumeButton.Text = "Pause / Resume";
+            this.PauseResumeButton.UseVisualStyleBackColor = true;
+            this.PauseResumeButton.Click += new System.EventHandler(this.PauseResumeButton_Click);
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1548, 682);
-            this.Controls.Add(this.StartButton);
+            this.Controls.Add(this.PauseResumeButton);
+            this.Controls.Add(this.SortButton);
             this.Controls.Add(this.MainSortingPanel);
-            this.Controls.Add(this.TheResetButton);
+            this.Controls.Add(this.PopulateNumbersButton);
             this.Controls.Add(this.AlgorithmComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menuStrip3);
@@ -160,9 +172,10 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox AlgorithmComboBox;
-        private System.Windows.Forms.Button TheResetButton;
+        private System.Windows.Forms.Button PopulateNumbersButton;
         private System.Windows.Forms.Panel MainSortingPanel;
-        private System.Windows.Forms.Button StartButton;
+        private System.Windows.Forms.Button SortButton;
+        private System.Windows.Forms.Button PauseResumeButton;
     }
 }
 

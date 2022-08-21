@@ -9,6 +9,9 @@ namespace SortingAlgorithmVisualizer
 {
     internal interface ISortingEngine
     {
-        void SortData(int[] arrayToBeSorted, Graphics sortingGraphics, int maxNumberValue);
+        void NextSortingStep();
+        bool SortIsComplete();
+        void RedrawGUI();
+
     }
 }

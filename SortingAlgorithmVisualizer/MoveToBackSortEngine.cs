@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
+using System.Threading.Tasks;
 
 namespace SortingAlgorithmVisualizer
 {
-    internal class BubbleSortEngine : ISortingEngine
+    internal class MoveToBackSortEngine : ISortingEngine
     {
         private int[] _arrayToBeSorted;
         private Graphics _sortingGraphics;
@@ -16,7 +16,9 @@ namespace SortingAlgorithmVisualizer
         Brush redBrush = new SolidBrush(Color.Red);
         Brush whiteBrush = new SolidBrush(Color.White);
 
-        public BubbleSortEngine(int[] arrayToBeSorted, Graphics sortingGraphics, int maxNumberValue)
+        private int _currentListIndex = 0;
+
+        public MoveToBackSortEngine(int[] arrayToBeSorted, Graphics sortingGraphics, int maxNumberValue)
         {
             _arrayToBeSorted = arrayToBeSorted;
             _sortingGraphics = sortingGraphics;
@@ -25,13 +27,26 @@ namespace SortingAlgorithmVisualizer
 
         public void NextSortingStep()
         {
-            for (int i = 0; i < _arrayToBeSorted.Count() - 1; i++)
+            if (_currentListIndex >= _arrayToBeSorted.Count() - 1) _currentListIndex = 0;
+            if (_arrayToBeSorted[_currentListIndex] > _arrayToBeSorted[_currentListIndex + 1])
             {
-                if (_arrayToBeSorted[i] > _arrayToBeSorted[i + 1])
-                {
-                    Switch(i, i + 1);
-                }
+                Rotate(_currentListIndex);
             }
+            _currentListIndex++;
+        }
+        private void Rotate(int currentListIndex)
+        {
+            int temporaryIndex = _arrayToBeSorted[_currentListIndex];
+            int endPoint = _arrayToBeSorted.Count() - 1;
+
+            for(int i = _currentListIndex; i < endPoint; i++)
+            {
+                _arrayToBeSorted[i] = _arrayToBeSorted[i + 1];
+                DrawNumberRepresentations(i, _arrayToBeSorted[i]);
+            }
+
+            _arrayToBeSorted[endPoint] = temporaryIndex;
+            DrawNumberRepresentations(endPoint, _arrayToBeSorted[endPoint]);
         }
         public bool SortIsComplete()
         {
@@ -43,16 +58,6 @@ namespace SortingAlgorithmVisualizer
                 }
             }
             return true;
-        }
-        private void Switch(int i, int j)
-        {
-            int temporaryContainer = _arrayToBeSorted[i];
-            _arrayToBeSorted[i] = _arrayToBeSorted[i + 1];
-            _arrayToBeSorted[i + 1] = temporaryContainer;
-
-            // Painting values before and after the switch
-            DrawNumberRepresentations(i, _arrayToBeSorted[i]);
-            DrawNumberRepresentations(j, _arrayToBeSorted[j]);
         }
         private void DrawNumberRepresentations(int position, int height)
         {
