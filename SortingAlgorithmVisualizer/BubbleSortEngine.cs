@@ -30,19 +30,8 @@ namespace SortingAlgorithmVisualizer
                 if (_arrayToBeSorted[i] > _arrayToBeSorted[i + 1])
                 {
                     Switch(i, i + 1);
-                }
+                }               
             }
-        }
-        public bool SortIsComplete()
-        {
-            for (int i = 0; i < _arrayToBeSorted.Count() - 1; i++)
-            {
-                if (_arrayToBeSorted[i] > _arrayToBeSorted[i + 1])
-                {
-                    return false;
-                }
-            }
-            return true;
         }
         private void Switch(int i, int j)
         {
@@ -59,11 +48,22 @@ namespace SortingAlgorithmVisualizer
             _sortingGraphics.FillRectangle(whiteBrush, position, 0, 1, _maxNumberValue);
             _sortingGraphics.FillRectangle(redBrush, position, _maxNumberValue - _arrayToBeSorted[position], 1, _maxNumberValue);
         }
-        public void RedrawGUI()
+        public bool SortIsComplete()
+        {
+            for (int i = 0; i < _arrayToBeSorted.Count() - 1; i++)
+            {
+                if (_arrayToBeSorted[i] > _arrayToBeSorted[i + 1])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public void DrawSortedNumbers()
         {
             for (int i = 0; i < (_arrayToBeSorted.Count() - 1); i++)
             {
-                _sortingGraphics.FillRectangle(new SolidBrush(Color.White), i, _maxNumberValue - _arrayToBeSorted[i], 1, _maxNumberValue);
+                _sortingGraphics.FillRectangle(new SolidBrush(Color.Green), i, _maxNumberValue - _arrayToBeSorted[i], 1, _maxNumberValue);
             }
         }
     }

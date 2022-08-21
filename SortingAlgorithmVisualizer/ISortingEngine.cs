@@ -11,7 +11,6 @@ namespace SortingAlgorithmVisualizer
     {
         void NextSortingStep();
         bool SortIsComplete();
-        void RedrawGUI();
-
+        void DrawSortedNumbers();
     }
 }

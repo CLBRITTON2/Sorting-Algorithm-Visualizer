@@ -111,6 +111,10 @@ namespace SortingAlgorithmVisualizer
                 {
                     sortEngine.NextSortingStep();
                 }
+                if(sortEngine.SortIsComplete())
+                {
+                    sortEngine.DrawSortedNumbers();
+                }
             }
             catch (Exception ex)
             {

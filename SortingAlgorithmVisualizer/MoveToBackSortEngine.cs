@@ -59,6 +59,10 @@ namespace SortingAlgorithmVisualizer
             }
             return true;
         }
+        public void DrawSortedNumbers()
+        {
+
+        }
         private void DrawNumberRepresentations(int position, int height)
         {
             _sortingGraphics.FillRectangle(whiteBrush, position, 0, 1, _maxNumberValue);

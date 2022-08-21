@@ -93,12 +93,14 @@
             // 
             // PopulateNumbersButton
             // 
+            this.PopulateNumbersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.PopulateNumbersButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.PopulateNumbersButton.Location = new System.Drawing.Point(297, 30);
             this.PopulateNumbersButton.Name = "PopulateNumbersButton";
             this.PopulateNumbersButton.Size = new System.Drawing.Size(138, 22);
             this.PopulateNumbersButton.TabIndex = 3;
             this.PopulateNumbersButton.Text = "Populate Numbers";
-            this.PopulateNumbersButton.UseVisualStyleBackColor = true;
+            this.PopulateNumbersButton.UseVisualStyleBackColor = false;
             this.PopulateNumbersButton.Click += new System.EventHandler(this.PopulateNumbersButton_Click);
             // 
             // MainSortingPanel
@@ -114,26 +116,29 @@
             // 
             // SortButton
             // 
+            this.SortButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.SortButton.Location = new System.Drawing.Point(441, 31);
             this.SortButton.Name = "SortButton";
             this.SortButton.Size = new System.Drawing.Size(138, 20);
             this.SortButton.TabIndex = 5;
             this.SortButton.Text = "Sort";
-            this.SortButton.UseVisualStyleBackColor = true;
+            this.SortButton.UseVisualStyleBackColor = false;
             this.SortButton.Click += new System.EventHandler(this.SortButton_Click);
             // 
             // PauseResumeButton
             // 
+            this.PauseResumeButton.BackColor = System.Drawing.Color.Yellow;
             this.PauseResumeButton.Location = new System.Drawing.Point(585, 31);
             this.PauseResumeButton.Name = "PauseResumeButton";
             this.PauseResumeButton.Size = new System.Drawing.Size(138, 20);
             this.PauseResumeButton.TabIndex = 6;
             this.PauseResumeButton.Text = "Pause / Resume";
-            this.PauseResumeButton.UseVisualStyleBackColor = true;
+            this.PauseResumeButton.UseVisualStyleBackColor = false;
             this.PauseResumeButton.Click += new System.EventHandler(this.PauseResumeButton_Click);
             // 
             // Form1
             // 
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1548, 682);
             this.Controls.Add(this.PauseResumeButton);
             this.Controls.Add(this.SortButton);
