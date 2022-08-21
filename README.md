@@ -15,4 +15,5 @@
 #### Completed Algorithms:
 ### Bubble Sort
 ![Alt text](https://github.com/CLBRITTON2/Sorting-Algorithm-Visualizer/blob/master/Examples/BubbleSort.gif)
-
+### Move To Back Sort (Example of bad sorting) 
+![Alt text](https://github.com/CLBRITTON2/Sorting-Algorithm-Visualizer/blob/master/Examples/MoveToBackSort.gif)
