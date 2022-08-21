@@ -49,7 +49,7 @@
             this.toolStripMenuItem4});
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(1548, 24);
+            this.menuStrip3.Size = new System.Drawing.Size(734, 24);
             this.menuStrip3.TabIndex = 0;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -112,7 +112,7 @@
             this.MainSortingPanel.BackColor = System.Drawing.Color.DimGray;
             this.MainSortingPanel.Location = new System.Drawing.Point(12, 57);
             this.MainSortingPanel.Name = "MainSortingPanel";
-            this.MainSortingPanel.Size = new System.Drawing.Size(1524, 613);
+            this.MainSortingPanel.Size = new System.Drawing.Size(710, 611);
             this.MainSortingPanel.TabIndex = 4;
             // 
             // SortButton
@@ -140,7 +140,7 @@
             // Form1
             // 
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1548, 682);
+            this.ClientSize = new System.Drawing.Size(734, 680);
             this.Controls.Add(this.PauseResumeButton);
             this.Controls.Add(this.SortButton);
             this.Controls.Add(this.MainSortingPanel);
