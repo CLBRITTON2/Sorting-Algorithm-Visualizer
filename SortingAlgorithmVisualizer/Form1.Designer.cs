@@ -43,6 +43,7 @@
             // 
             // menuStrip3
             // 
+            this.menuStrip3.BackColor = System.Drawing.Color.Silver;
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.filexToolStripMenuItem,
             this.toolStripMenuItem4});
@@ -108,7 +109,7 @@
             this.MainSortingPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MainSortingPanel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.MainSortingPanel.BackColor = System.Drawing.Color.DimGray;
             this.MainSortingPanel.Location = new System.Drawing.Point(12, 57);
             this.MainSortingPanel.Name = "MainSortingPanel";
             this.MainSortingPanel.Size = new System.Drawing.Size(1524, 613);
@@ -127,7 +128,7 @@
             // 
             // PauseResumeButton
             // 
-            this.PauseResumeButton.BackColor = System.Drawing.Color.Yellow;
+            this.PauseResumeButton.BackColor = System.Drawing.Color.Gold;
             this.PauseResumeButton.Location = new System.Drawing.Point(585, 31);
             this.PauseResumeButton.Name = "PauseResumeButton";
             this.PauseResumeButton.Size = new System.Drawing.Size(138, 20);
@@ -138,7 +139,7 @@
             // 
             // Form1
             // 
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1548, 682);
             this.Controls.Add(this.PauseResumeButton);
             this.Controls.Add(this.SortButton);
