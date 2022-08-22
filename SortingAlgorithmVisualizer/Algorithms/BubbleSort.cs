@@ -13,8 +13,9 @@ namespace SortingAlgorithmVisualizer
         private Graphics _sortingGraphics;
         private int _maxNumberValue;
 
-        Brush redBrush = new SolidBrush(Color.Red);
-        Brush whiteBrush = new SolidBrush(Color.White);
+        Brush numberBrush = new SolidBrush(Color.Red);
+        Brush backgroundBrush = new SolidBrush(Color.White);
+        Brush finishBrush = new SolidBrush(Color.Green);
 
         public BubbleSort(int[] arrayToBeSorted, Graphics sortingGraphics, int maxNumberValue)
         {
@@ -40,13 +41,13 @@ namespace SortingAlgorithmVisualizer
             _arrayToBeSorted[i + 1] = temporaryContainer;
 
             // Painting values before and after the switch
-            DrawNumberRepresentations(i, _arrayToBeSorted[i]);
-            DrawNumberRepresentations(j, _arrayToBeSorted[j]);
+            DrawNumber(i, _arrayToBeSorted[i]);
+            DrawNumber(j, _arrayToBeSorted[j]);
         }
-        private void DrawNumberRepresentations(int position, int height)
+        private void DrawNumber(int position, int height)
         {
-            _sortingGraphics.FillRectangle(whiteBrush, position, 0, 1, _maxNumberValue);
-            _sortingGraphics.FillRectangle(redBrush, position, _maxNumberValue - _arrayToBeSorted[position], 1, _maxNumberValue);
+            _sortingGraphics.FillRectangle(backgroundBrush, position, 0, 1, _maxNumberValue);
+            _sortingGraphics.FillRectangle(numberBrush, position, _maxNumberValue - _arrayToBeSorted[position], 1, _maxNumberValue);
         }
         public bool SortIsComplete()
         {
@@ -63,7 +64,7 @@ namespace SortingAlgorithmVisualizer
         {
             for (int i = 0; i < (_arrayToBeSorted.Count() - 1); i++)
             {
-                _sortingGraphics.FillRectangle(new SolidBrush(Color.Green), i, _maxNumberValue - _arrayToBeSorted[i], 1, _maxNumberValue);
+                _sortingGraphics.FillRectangle(finishBrush, i, _maxNumberValue - _arrayToBeSorted[i], 1, _maxNumberValue);
             }
         }
     }

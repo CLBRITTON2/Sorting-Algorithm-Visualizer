@@ -13,8 +13,9 @@ namespace SortingAlgorithmVisualizer
         private Graphics _sortingGraphics;
         private int _maxNumberValue;
 
-        Brush redBrush = new SolidBrush(Color.Red);
-        Brush whiteBrush = new SolidBrush(Color.White);
+        Brush numberBrush = new SolidBrush(Color.Red);
+        Brush backgroundBrush = new SolidBrush(Color.White);
+        Brush finishBrush = new SolidBrush(Color.Green);
 
         private int _currentListIndex = 0;
 
@@ -42,11 +43,11 @@ namespace SortingAlgorithmVisualizer
             for(int i = _currentListIndex; i < endPoint; i++)
             {
                 _arrayToBeSorted[i] = _arrayToBeSorted[i + 1];
-                DrawNumberRepresentations(i, _arrayToBeSorted[i]);
+                DrawNumber(i, _arrayToBeSorted[i]);
             }
 
             _arrayToBeSorted[endPoint] = temporaryIndex;
-            DrawNumberRepresentations(endPoint, _arrayToBeSorted[endPoint]);
+            DrawNumber(endPoint, _arrayToBeSorted[endPoint]);
         }
         public bool SortIsComplete()
         {
@@ -59,17 +60,17 @@ namespace SortingAlgorithmVisualizer
             }
             return true;
         }
+        private void DrawNumber(int position, int height)
+        {
+            _sortingGraphics.FillRectangle(backgroundBrush, position, 0, 1, _maxNumberValue);
+            _sortingGraphics.FillRectangle(numberBrush, position, _maxNumberValue - _arrayToBeSorted[position], 1, _maxNumberValue);
+        }
         public void DrawSortedNumbers()
         {
             for (int i = 0; i < (_arrayToBeSorted.Count() - 1); i++)
             {
-                _sortingGraphics.FillRectangle(new SolidBrush(Color.Green), i, _maxNumberValue - _arrayToBeSorted[i], 1, _maxNumberValue);
+                _sortingGraphics.FillRectangle(finishBrush, i, _maxNumberValue - _arrayToBeSorted[i], 1, _maxNumberValue);
             }
-        }
-        private void DrawNumberRepresentations(int position, int height)
-        {
-            _sortingGraphics.FillRectangle(whiteBrush, position, 0, 1, _maxNumberValue);
-            _sortingGraphics.FillRectangle(redBrush, position, _maxNumberValue - _arrayToBeSorted[position], 1, _maxNumberValue);
         }
     }
 }

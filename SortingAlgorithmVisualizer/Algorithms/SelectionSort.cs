@@ -14,8 +14,9 @@ namespace SortingAlgorithmVisualizer
         private Graphics _sortingGraphics;
         private int _maxNumberValue;
 
-        Brush redBrush = new SolidBrush(Color.Red);
-        Brush whiteBrush = new SolidBrush(Color.White);
+        Brush numberBrush = new SolidBrush(Color.Red);
+        Brush backgroundBrush = new SolidBrush(Color.White);
+        Brush finishBrush = new SolidBrush(Color.Green);
 
         public SelectionSort(int[] arrayToBeSorted, Graphics sortingGraphics, int maxNumberValue)
         {
@@ -32,11 +33,11 @@ namespace SortingAlgorithmVisualizer
                 int temporaryContainer = _arrayToBeSorted[i];
 
                 _arrayToBeSorted[i] = _arrayToBeSorted[smallestNumber];
-                DrawNumberRepresentations(i, _arrayToBeSorted[smallestNumber]);
+                DrawNumber(i, _arrayToBeSorted[smallestNumber]);
                 Thread.Sleep(1);
 
                 _arrayToBeSorted[smallestNumber] = temporaryContainer;
-                DrawNumberRepresentations(smallestNumber, temporaryContainer);
+                DrawNumber(smallestNumber, temporaryContainer);
                 Thread.Sleep(1);
             }
         }
@@ -44,7 +45,7 @@ namespace SortingAlgorithmVisualizer
         {
             int smallestNumber = k;
             int smallestNumberIndex = arrayToBeSorted[k];
-            for(int i = k + 1; i < arrayToBeSorted.Count(); i++)
+            for (int i = k + 1; i < arrayToBeSorted.Count(); i++)
             {
                 if (arrayToBeSorted[i] < smallestNumberIndex)
                 {
@@ -54,10 +55,10 @@ namespace SortingAlgorithmVisualizer
             }
             return smallestNumber;
         }
-        private void DrawNumberRepresentations(int position, int height)
+        private void DrawNumber(int position, int height)
         {
-            _sortingGraphics.FillRectangle(whiteBrush, position, 0, 1, _maxNumberValue);
-            _sortingGraphics.FillRectangle(redBrush, position, _maxNumberValue - _arrayToBeSorted[position], 1, _maxNumberValue);
+            _sortingGraphics.FillRectangle(backgroundBrush, position, 0, 1, _maxNumberValue);
+            _sortingGraphics.FillRectangle(numberBrush, position, _maxNumberValue - _arrayToBeSorted[position], 1, _maxNumberValue);
         }
         public bool SortIsComplete()
         {
@@ -74,7 +75,7 @@ namespace SortingAlgorithmVisualizer
         {
             for (int i = 0; i < (_arrayToBeSorted.Count() - 1); i++)
             {
-                _sortingGraphics.FillRectangle(new SolidBrush(Color.Green), i, _maxNumberValue - _arrayToBeSorted[i], 1, _maxNumberValue);
+                _sortingGraphics.FillRectangle(finishBrush, i, _maxNumberValue - _arrayToBeSorted[i], 1, _maxNumberValue);
             }
         }
     }
